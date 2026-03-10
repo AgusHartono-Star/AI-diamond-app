@@ -1,93 +1,64 @@
 # 💎 Diamond Price AI
 
-A machine learning web application that predicts diamond prices based on their physical characteristics, built with Streamlit and XGBoost.
+Aplikasi web Machine Learning untuk memprediksi harga berlian berdasarkan karakteristik fisiknya, dibangun dengan **Streamlit** dan **XGBoost**.
+
+**Dibuat oleh:** Agus Hartono — NIM: E1E124025
 
 ---
 
-## 🚀 Live Demo
+## 🚀 Cara Menjalankan
 
-Coming soon (Streamlit Cloud deployment)
-
----
-
-## ✨ Features
-
-- Predict diamond prices using a trained XGBoost model
-- Interactive sliders and dropdowns for all diamond features
-- Feature importance visualization
-- Clean, responsive Streamlit dashboard
-
----
-
-## 🛠️ How to Run Locally
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/yourusername/AI-diamond-app.git
-cd AI-diamond-app
-```
-
-### 2. Install dependencies
-
+### 1. Install dependensi
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Run the app
+### 2. Latih model (jalankan sekali)
+```bash
+python train_model.py
+```
 
+### 3. Jalankan aplikasi
 ```bash
 streamlit run app.py
 ```
 
-The app will open at `http://localhost:8501`.
+Aplikasi akan terbuka di `http://localhost:8501`
 
 ---
 
-## 📦 Project Structure
+## 📦 Struktur Proyek
 
 ```
 AI-diamond-app/
-├── app.py                    # Main Streamlit application
-├── style.css                 # Custom CSS styles
-├── model_diamonds_final.pkl  # Trained ML model (XGBoost pipeline)
-├── requirements.txt          # Python dependencies
-├── assets/
-│   ├── diamond_banner.png    # Hero banner image
-│   └── ai.webp               # AI section image
-└── README.md
+├── app.py                    # Aplikasi Streamlit utama
+├── train_model.py            # Script training & simpan model
+├── style.css                 # Custom CSS
+├── requirements.txt          # Dependensi Python
+├── diamonds.csv              # Dataset
+├── model_diamonds_final.pkl  # Model XGBoost (setelah training)
+├── model_results.csv         # Hasil evaluasi (setelah training)
+└── e1e124025_agus_hartono.py # Kode asli Google Colab
 ```
 
 ---
 
-## 🤖 Machine Learning Models
+## 🤖 Model Machine Learning
 
-This project compares several regression models trained on the `diamonds` dataset (ggplot2):
-
-| Model | Description |
+| Model | Deskripsi |
 |---|---|
-| K-Nearest Neighbors (KNN) | Instance-based learning |
-| Random Forest | Bagging ensemble |
-| XGBoost ✅ | Gradient boosting (final model) |
+| K-Nearest Neighbors | Instance-based learning |
+| Random Forest | Ensemble bagging |
+| **XGBoost ✅** | Gradient boosting — **akurasi tertinggi** |
 
-**Evaluation Metrics:** R² Score, RMSE, MAE
-
----
-
-## 🔮 Input Features
-
-| Feature | Type | Description |
-|---|---|---|
-| Carat | Float | Weight of the diamond |
-| Cut | Categorical | Quality of the cut (Fair → Ideal) |
-| Color | Categorical | Diamond colour (J = worst, D = best) |
-| Clarity | Categorical | Clarity grade (I1 → IF) |
-| Depth | Float | Total depth percentage |
-| Table | Float | Width of top of diamond |
-| x, y, z | Float | Length, width, height (mm) |
+**Metrik Evaluasi:** R² Score, RMSE, MAE  
+**Skenario Split:** 10:90, 20:80, 30:70, 40:60
 
 ---
 
-## 📄 License
+## 🔮 Fitur Aplikasi
 
-MIT License
+- **Tab Prediksi** — Input fitur berlian, prediksi harga real-time + rentang estimasi
+- **Tab EDA** — Eksplorasi dataset (distribusi, korelasi, scatter plot)
+- **Tab Evaluasi** — Perbandingan 3 model di 4 skenario split
+- **Tab Tentang** — Deskripsi proyek dan tech stack
