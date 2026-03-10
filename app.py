@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import pandas as pd
 import joblib
@@ -18,7 +19,8 @@ st.set_page_config(
 # =========================
 
 def load_css():
-    with open("style.css") as f:
+    css_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "style.css")
+    with open(css_path) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 load_css()
@@ -126,13 +128,16 @@ with col2:
     })
 
     if st.button("💎 Predict Price"):
-
-        price = model.predict(input_data)[0]
-
-        st.metric(
-            label="Estimated Diamond Price",
-            value=f"${price:,.2f}"
-        )
+        try:
+            price = model.predict(input_data)[0]
+            st.metric(
+                label="Estimated Diamond Price",
+                value=f"${price:,.2f}"
+            )
+        except (ValueError, TypeError) as e:
+            st.error(f"Prediction failed: {e}. Please check your input values.")
+        except Exception as e:
+            st.error(f"An unexpected error occurred: {e}")
 
 st.write("")
 st.write("---")
@@ -161,7 +166,7 @@ try:
 
     st.pyplot(fig)
 
-except:
+except (AttributeError, KeyError, TypeError):
     st.info("Feature importance available only for RandomForest or XGBoost models")
 
 st.write("")
