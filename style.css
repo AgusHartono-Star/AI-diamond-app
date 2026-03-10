@@ -1,57 +1,87 @@
-/* ==============================
-   HERO SECTION
-   ============================== */
+/* ─── GOOGLE FONTS ─── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+/* ─── HERO ─── */
 .hero-title {
-    font-size: 42px;
+    font-size: 46px;
     font-weight: 700;
-    color: #4A90E2;
+    color: #1a1a2e;
     text-align: center;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
+    letter-spacing: -1px;
 }
 
 .hero-subtitle {
-    font-size: 20px;
-    color: #555;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* ==============================
-   SECTION TITLES
-   ============================== */
-
-.section-title {
-    font-size: 32px;
-    font-weight: 700;
-    color: #2c3e50;
-    margin-bottom: 16px;
-    padding-bottom: 6px;
-    border-bottom: 3px solid #4A90E2;
-}
-
-/* ==============================
-   CARDS
-   ============================== */
-
-.card {
-    padding: 25px;
-    border-radius: 12px;
-    background-color: #f7f7f7;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* ==============================
-   RESULT & DESCRIPTION
-   ============================== */
-
-.result {
-    font-size: 32px;
-    font-weight: bold;
-    color: #27ae60;
-}
-
-.description {
     font-size: 18px;
-    color: #555;
+    color: #6b7280;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+/* ─── SECTION TITLE ─── */
+.section-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-top: 8px;
+    margin-bottom: 4px;
+    padding-bottom: 8px;
+    border-bottom: 3px solid #6366f1;
+}
+
+/* ─── METRIC CARD ─── */
+.metric-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 16px;
+    padding: 20px 24px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.35);
+}
+
+.metric-card .label {
+    font-size: 13px;
+    opacity: 0.85;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.metric-card .value {
+    font-size: 38px;
+    font-weight: 700;
+    margin-top: 4px;
+}
+
+/* ─── INFO CARD ─── */
+.info-card {
+    background: #f8faff;
+    border: 1px solid #e0e7ff;
+    border-radius: 12px;
+    padding: 20px 24px;
+}
+
+/* ─── BADGE ─── */
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    background: #e0e7ff;
+    color: #4338ca;
+    margin-right: 6px;
+    margin-bottom: 6px;
+}
+
+/* ─── FOOTER ─── */
+.footer {
+    text-align: center;
+    color: #9ca3af;
+    font-size: 14px;
+    padding: 24px 0 8px 0;
+    border-top: 1px solid #e5e7eb;
 }
