@@ -1,23 +1,57 @@
-.main-title{
-    font-size:40px;
-    font-weight:700;
-    color:#4A90E2;
+/* ==============================
+   HERO SECTION
+   ============================== */
+
+.hero-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #4A90E2;
+    text-align: center;
+    margin-bottom: 8px;
 }
 
-.card{
-    padding:25px;
-    border-radius:12px;
-    background-color:#f7f7f7;
-    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+.hero-subtitle {
+    font-size: 20px;
+    color: #555;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-.result{
-    font-size:32px;
-    font-weight:bold;
-    color:#27ae60;
+/* ==============================
+   SECTION TITLES
+   ============================== */
+
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 16px;
+    padding-bottom: 6px;
+    border-bottom: 3px solid #4A90E2;
 }
 
-.description{
-    font-size:18px;
-    color:#555;
+/* ==============================
+   CARDS
+   ============================== */
+
+.card {
+    padding: 25px;
+    border-radius: 12px;
+    background-color: #f7f7f7;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ==============================
+   RESULT & DESCRIPTION
+   ============================== */
+
+.result {
+    font-size: 32px;
+    font-weight: bold;
+    color: #27ae60;
+}
+
+.description {
+    font-size: 18px;
+    color: #555;
 }
